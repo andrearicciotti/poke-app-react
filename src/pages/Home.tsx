@@ -43,7 +43,7 @@ export function Home({ dimensioni, gruppi }: AppConfig) {
 
       <SizeSelector sizes={dimensions} />
 
-      <section id="ingredients-selection-container">
+      <section id="ingredients-selection-container" className="flex flex-column just-center">
         {renderGroups(groups)}
       </section>
 
@@ -86,7 +86,7 @@ export function Home({ dimensioni, gruppi }: AppConfig) {
 }
 
 function renderGroups(groups: [string, Group][]) {
-  return groups.map(group => {
+  return groups.map((group,index) => {
     const _group = {
       id: group[0],
       ...group[1]
@@ -96,6 +96,7 @@ function renderGroups(groups: [string, Group][]) {
       <IngredientGroup
         key={_group.id}
         group={_group}
+        bg={index % 2 === 1}
       />
     )
   });

@@ -11,7 +11,7 @@ export function PageHeader({ classes, left, center, right }: PageHeaderProps) {
 
   return (
     <header 
-      className={`${_classes}page-header padding-1`}
+      className={`${_classes}page-header padding-05`}
     >
       {renderElement(left, 'icon')}
       {renderElement(center, 'title')}

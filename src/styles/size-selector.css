@@ -1,4 +1,5 @@
 #size-selector-container {
+  margin-top: 72px;
   padding: 1rem 0;
   background-color: var(--alt-bg);
 }
@@ -29,9 +30,8 @@
   transition: background-image 0.2s ease-in-out;
   height: 100%;
   width: 135px;
-  filter: grayscale(1);
   filter: invert(.3);
-  opacity: .2;
+  opacity: .1;
 }
 
 .size-container.selected.bg-0::before {
@@ -57,10 +57,19 @@
   padding: 1.8rem 1.5rem;
 }
 
+.size-container:not(.selected) .inner-text {
+  background-size: 200% 200%;
+  transition: all 0.3s ease-in-out;
+}
+
+.size-container:not(.selected) .inner-text:hover {
+  background: linear-gradient(45deg, var(--primary-color), transparent);
+  background-position: 100% 0;
+}
+
 @media (pointer: fine) {
   .inner-text:hover {
     cursor: pointer;
-    box-shadow: inset 0 0 0 2px var(--primary-color);
     opacity: 1;
   }
 }
@@ -68,13 +77,11 @@
 @media (pointer: coarse) {
   .inner-text:active {
     opacity: 1;
-    box-shadow: inset 0 0 0 2px var(--primary-color);
   }
 }
 
 @media (max-width: 768px) {
   section#size-selector-container {
     gap: .5rem;
-    /* Adjust this value to your desired mobile gap */
   }
 }

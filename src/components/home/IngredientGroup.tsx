@@ -13,10 +13,11 @@ interface IngredientGroupProps {
       prezzo: number;
     }[];
     id: string;
-  }
+  };
+  bg: boolean;
 }
 
-export function IngredientGroup({ group }: IngredientGroupProps) {
+export function IngredientGroup({ group, bg }: IngredientGroupProps) {
   const {
     ingredients: selectedIngredients,
     groupCount,
@@ -38,35 +39,37 @@ export function IngredientGroup({ group }: IngredientGroupProps) {
   const increaseQuantityGroup = (ingredientId: string) => increaseQuantity(group.id, ingredientId);
 
   return (
-    <section className="ingredient-group">
-      <div className="ingredient-group-header text-uppercase">
-        <h3 className="ingredient-group-name">{group.id}</h3>
-        <GroupLimits
-          count={count}
-          limit={limit}
-          extraPrice={count > limit ? groupExtraPrice(group.id) : 0}
-        />
-        <h4 className="extra-label text-center">{group.extras}</h4>
-      </div>
+    <section className={`ingredient-group ${bg ? "group-bg" : ""}`}>
+      <div className="group-wrapper padding-2 w-80">
+        <div className="ingredient-group-header text-capitalize">
+          <h3 className="ingredient-group-name padding-1">{group.id}</h3>
+          <GroupLimits
+            count={count}
+            limit={limit}
+            extraPrice={count > limit ? groupExtraPrice(group.id) : 0}
+          />
+          <h4 className="extra-label text-center">{group.extras}</h4>
+        </div>
 
-      <div className="ingredient-group-container">
-        {ingredients.map(ingredient => {
-          const ingredientId = ingredientNameToId(ingredient.name);
-          const selectedIngredient = selectedIngredients[group.id]?.find((ingredient: ContextIngredient) => ingredient.id == ingredientId);
-          const isSelected = selectedIngredient ? true : false;
-          return (
-            <Ingredient
-              key={ingredientId}
-              ingredientId={ingredientId}
-              ingredientName={ingredient.name}
-              ingredientQuantity={selectedIngredient?.quantity || 0}
-              addIngredient={addIngredientGroup}
-              removeIngredient={removeIngredientGroup}
-              increaseQuantity={increaseQuantityGroup}
-              isSelected={isSelected}
-            />
-          )
-        })}
+        <div className="ingredient-group-container">
+          {ingredients.map(ingredient => {
+            const ingredientId = ingredientNameToId(ingredient.name);
+            const selectedIngredient = selectedIngredients[group.id]?.find((ingredient: ContextIngredient) => ingredient.id == ingredientId);
+            const isSelected = selectedIngredient ? true : false;
+            return (
+              <Ingredient
+                key={ingredientId}
+                ingredientId={ingredientId}
+                ingredientName={ingredient.name}
+                ingredientQuantity={selectedIngredient?.quantity || 0}
+                addIngredient={addIngredientGroup}
+                removeIngredient={removeIngredientGroup}
+                increaseQuantity={increaseQuantityGroup}
+                isSelected={isSelected}
+              />
+            )
+          })}
+        </div>
       </div>
     </section>
   )
