@@ -18,6 +18,10 @@ import { Registration } from './pages/Register';
 import { NotFound } from './pages/NotFound';
 import { AdminUsersManagement } from './pages/AdminUsersManagement';
 import { CartProvider } from './context/CartContext';
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
 
 const config: AppConfig = appConfig;
 

@@ -11,17 +11,17 @@ export function PageHeader({ classes, left, center, right }: PageHeaderProps) {
 
   return (
     <header 
-      className={`${_classes}page-header`}
+      className={`${_classes}page-header padding-1`}
     >
-      {renderElement(left)}
-      {renderElement(center)}
-      {renderElement(right)}
+      {renderElement(left, 'icon')}
+      {renderElement(center, 'title')}
+      {renderElement(right, 'icon')}
     </header>
   )
 }
 
-function renderElement(element: React.ReactNode) {
+function renderElement(element: React.ReactNode, classes: string) {
   return (
-    <div className="padding-1" >{element}</div>
+    <div className={classes}>{element}</div>
   )
 }

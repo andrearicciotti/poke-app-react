@@ -1,0 +1,80 @@
+#size-selector-container {
+  padding: 1rem 0;
+  background-color: var(--alt-bg);
+}
+
+.size-container input {
+  display: none;
+}
+
+.size-container .inner-text {
+  opacity: .3;
+}
+
+.size-container.selected {
+  position: relative;
+}
+
+.size-container.selected .inner-text {
+  box-shadow: inset 0 0 0 2px var(--primary-color);
+  opacity: 1;
+}
+
+.size-container.selected::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  bottom: -2px;
+  background-image: url(/poke-app-react/src/img/pokes.png);
+  transition: background-image 0.2s ease-in-out;
+  height: 100%;
+  width: 135px;
+  filter: grayscale(1);
+  filter: invert(.3);
+  opacity: .2;
+}
+
+.size-container.selected.bg-0::before {
+  background-position-x: 0;
+}
+
+.size-container.selected.bg-1::before {
+  background-position-x: -240px;
+}
+
+.size-container.selected.bg-2::before {
+  background-position-x: -480px;
+}
+
+.size-container.selected.bg-3::before {
+  background-position-x: -720px;
+}
+
+.inner-text {
+  border-radius: 25px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  padding: 1.8rem 1.5rem;
+}
+
+@media (pointer: fine) {
+  .inner-text:hover {
+    cursor: pointer;
+    box-shadow: inset 0 0 0 2px var(--primary-color);
+    opacity: 1;
+  }
+}
+
+@media (pointer: coarse) {
+  .inner-text:active {
+    opacity: 1;
+    box-shadow: inset 0 0 0 2px var(--primary-color);
+  }
+}
+
+@media (max-width: 768px) {
+  section#size-selector-container {
+    gap: .5rem;
+    /* Adjust this value to your desired mobile gap */
+  }
+}

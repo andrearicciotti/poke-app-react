@@ -113,7 +113,7 @@ export function MainMenu({ extraMenuItems }: MainMenuProps) {
 
       {isOpen && createPortal(
         renderMenuOptions(),
-        document.getElementById('root')!
+        document.getElementById('main-menu')!
       )}
     </>
   )

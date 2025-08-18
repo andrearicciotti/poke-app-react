@@ -27,7 +27,7 @@ export function SizeSelector({ sizes }: SizeSelectorProps) {
   }
 
   return (
-    <section id='size-selector-container'>
+    <section id='size-selector-container' className="flex flex-center flex-wrap gap-5">
       {renderSizes()}
     </section>
   )

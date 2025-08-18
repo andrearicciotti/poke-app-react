@@ -1,0 +1,17 @@
+header .title {
+  text-align: center;
+  letter-spacing: .3pt;
+  font-size: 14px;
+}
+
+header .icon {}
+
+#main-menu {
+  position: relative;
+}
+
+#main-menu-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

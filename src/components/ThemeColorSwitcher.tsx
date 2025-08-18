@@ -24,7 +24,7 @@ export function ThemeColorSwitcher({ menuId, openMenuId, setMenuId }: ThemeColor
 
   return (
       <div
-        className="flex gap-1 row-reverse align-start"
+        className="flex gap-05 row-reverse align-start color-selector"
       >
         <ButtonIcon
           icon={<FontAwesomeIcon icon={faSquare} />}
@@ -39,7 +39,7 @@ export function ThemeColorSwitcher({ menuId, openMenuId, setMenuId }: ThemeColor
         {
           isOpen &&
           <div
-            className="flex flex-wrap gap-1 just-end"
+            className="flex gap-05 just-end"
           >
             {renderOtherColorOptions(color, updateColor)}
           </div>

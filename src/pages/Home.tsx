@@ -24,20 +24,22 @@ export function Home({ dimensioni, gruppi }: AppConfig) {
   return (
     <div className="page-container">
       <PageHeader
+        classes="flex flex-center just-around"
         left={
           <ButtonIcon
             icon={<FontAwesomeIcon icon={faCartShopping} />}
-            classes="gold border-r-10"
+            classes="gold border-r-10 flex-1"
             tooltip="Carrello"
             linkTo={"/cart"}
           />
         }
-      right={
-        <MainMenu />
-      }
+        center={
+          <h2 id="page-title">Crea la tua Poke</h2>
+        }
+        right={
+          <MainMenu />
+        }
       />
-
-      <h2 id="page-title">crea la tua poke bowl</h2>
 
       <SizeSelector sizes={dimensions} />
 

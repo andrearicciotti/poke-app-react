@@ -17,7 +17,7 @@ export function SizeGroup({ name, price, limits }: SizeGroupProps) {
   const selected = name === size ? 'selected' : '';
 
   return (
-    <div className={`size-container${' ' + selected}`}>
+    <div className={`size-container${' ' + selected} min-w-200px bg-${Math.floor(Math.random() * 4)}`}>
       <label htmlFor={id}>
         <input
           type="radio"
@@ -25,12 +25,12 @@ export function SizeGroup({ name, price, limits }: SizeGroupProps) {
           id={id}
           onClick={() => selectSize(name)}
         />
-        <div className="flex flex-column flex-center gap-05 padding-1">
-          <span className="size-name text-uppercase text-large weight-bold">{name}</span>
-          <span className="size-limits">
+        <div className="inner-text flex flex-column flex-center gap-1">
+          <span className="size-name text-large text-uppercase weight-bold">{name}</span>
+          <span className="size-limits flex flex-column flex-center m-1">
             {renderLimits(limits)}
           </span>
-          <span className="size-price">{price.toFixed(2)} €</span>
+          <span className="size-price text-large weight-bold">{price.toFixed(2)} €</span>
         </div>
       </label>
     </div>
@@ -44,8 +44,8 @@ function renderLimits(limits: Limits) {
     const quantity: number = limit[1];
 
     return (
-      <span key={type} className="limit">
-        {quantity} {type}
+      <span key={type} className="limit text-normal">
+        {quantity} {type} 
       </span>
     )
   })

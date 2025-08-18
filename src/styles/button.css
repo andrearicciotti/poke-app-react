@@ -5,14 +5,20 @@
   border: 0 transparent;
 
   &:not(.disabled):active {
-    box-shadow: 0 0 2px 1px var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color);
   }
 }
 
 /* For devices that supports hover status */
 @media (hover: hover) {
   .button:not(.disabled):hover {
-    box-shadow: 0 0 2px 1px var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color);
+  }
+}
+
+@media (max-width: 764px) {
+  #main-menu-overlay .button:not(.disabled):not(.color-selector button) {
+    box-shadow: 0 0 0 2px var(--primary-color);
   }
 }
 
@@ -56,8 +62,13 @@
 .icon-only.small {
   padding: .5rem;
 
-  & svg{
+  & svg {
     width: 1rem;
     height: 1rem;
   }
+}
+
+.color-selector button, #theme-selector button {
+  position: relative;
+  z-index: 2;
 }
