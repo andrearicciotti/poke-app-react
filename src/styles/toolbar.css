@@ -7,13 +7,51 @@
   background: var(--alt-bg);
   border-radius: 15px;
   box-shadow: 0 0 5px 2px var(--accent-gray);
+  z-index: 2;
+}
+
+.toolbar .button {
+  transition: color .5s ease-in;
+
+  &:not(.disabled):active {
+    box-shadow: unset;
+  }
 }
 
 .toolbar .button.selected {
-  background: var(--primary-color);
   color: var(--primary-contrast);
+  background: transparent;
+  position: relative;
+  z-index: 3;
 }
 
 .toolbar .button:not(.selected) {
   color: var(--primary-color);
+  background: transparent;
+}
+
+.toolbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  background: var(--primary-color);
+  transition: left .3s ease-in-out;
+}
+
+.toolbar0::before {
+  left: 25px;
+}
+
+.toolbar1::before {
+  left: 95.5px;
+}
+
+.toolbar2::before {
+  left: 168px;
+}
+
+.toolbar3::before {
+  left: 239.5px;
 }

@@ -1,8 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse } from "@fortawesome/free-regular-svg-icons";
 
 import type { Cart, Poke } from "../types";
-import { ButtonIcon } from "../components/common/ButtonIcon";
 import { MainMenu } from "../components/common/MainMenu";
 import { PageHeader } from "../components/common/PageHeader";
 import { PageFooter } from "../components/common/PageFooter";
@@ -11,7 +9,6 @@ import { Item } from "../components/cart/Item";
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { Toolbar } from "../components/common/Toolbar";
 
 
 export function Cart() {
@@ -95,7 +92,6 @@ export function Cart() {
         classes="main-bg"
       />
 
-      <Toolbar />
     </div>
   )
 }
