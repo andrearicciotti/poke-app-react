@@ -1,0 +1,19 @@
+.toolbar {
+  position: fixed;
+  bottom: 25px;
+  width: 90vw;
+  height: 60px;
+  left: 5%;
+  background: var(--alt-bg);
+  border-radius: 15px;
+  box-shadow: 0 0 5px 2px var(--accent-gray);
+}
+
+.toolbar .button.selected {
+  background: var(--primary-color);
+  color: var(--primary-contrast);
+}
+
+.toolbar .button:not(.selected) {
+  color: var(--primary-color);
+}

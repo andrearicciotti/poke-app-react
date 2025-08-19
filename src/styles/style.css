@@ -15,10 +15,12 @@
   --theme-lightness-primary: 50%;
   --primary-color: hsl(var(--theme-hue-primary), var(--theme-saturation-primary), var(--theme-lightness-primary));
   --primary-contrast: var(--main-bg);
+  --primary-light: hsl(var(--theme-hue-primary), calc(var(--theme-saturation-primary) + 20%), calc(var(--theme-lightness-primary) + 20%));
 
   --accent-red: #df3939;
   --accent-gold: #bd8928;
   --accent-green: #2B882B;
+  --accent-gray: #a0a0a0;
 }
 
 /*

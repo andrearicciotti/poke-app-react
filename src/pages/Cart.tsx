@@ -11,6 +11,7 @@ import { Item } from "../components/cart/Item";
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { Toolbar } from "../components/common/Toolbar";
 
 
 export function Cart() {
@@ -26,14 +27,6 @@ export function Cart() {
   return (
     <div className="page-container h-100 flex flex-column">
       <PageHeader
-        left={
-          <ButtonIcon
-            icon={<FontAwesomeIcon icon={faHouse} />}
-            classes="primary-color border-r-10"
-            tooltip="Chiudi"
-            linkTo={"/"}
-          />
-        }
         center={
           <h3
             className="h-100 flex flex-center gap-05 text-center"
@@ -43,7 +36,7 @@ export function Cart() {
               cart.isShared && 
               <FontAwesomeIcon 
                 icon={faLink} 
-                title="Carello condiviso"
+                title="Carrello condiviso"
               />
             }
             <span>
@@ -101,6 +94,8 @@ export function Cart() {
 
         classes="main-bg"
       />
+
+      <Toolbar />
     </div>
   )
 }

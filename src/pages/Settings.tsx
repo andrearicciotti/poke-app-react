@@ -1,10 +1,10 @@
 import { Toolbar } from "../components/common/Toolbar";
 
 
-export function Favorites(){
+export function Settings(){
   return (
     <>
-      <div>This is the Favorites page</div>
+      <div>This is the Settings page</div>
       <Toolbar />
     </>
   )

@@ -12,6 +12,7 @@ import { PageHeader } from "../components/common/PageHeader";
 import { ButtonIcon } from "../components/common/ButtonIcon";
 import { MainMenu } from "../components/common/MainMenu";
 import { SaveSelectionModal } from "../components/SaveSelectionModal";
+import { Toolbar } from "../components/common/Toolbar";
 
 export function Home({ dimensioni, gruppi }: AppConfig) {
   const [isSaveOpen, setIsSaveOpen] = useState(false);
@@ -81,6 +82,7 @@ export function Home({ dimensioni, gruppi }: AppConfig) {
         />
       }
 
+      <Toolbar />
     </div>
   )
 }

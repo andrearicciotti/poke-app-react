@@ -5,8 +5,8 @@ export interface ButtonIconProps extends ButtonProps {
 }
 
 export function ButtonIcon({ icon, classes, ...otherProps }: ButtonIconProps) {
-  const _classes = classes ? `${classes} ` : '';
-
+  let _classes = classes ? `${classes} ` : '';
+  
   return (
     <Button
       classes={`${_classes}icon icon-only alt-bg`}
