@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { useSwipeable } from "react-swipeable";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Outlet } from "react-router-dom";
 import { Toolbar } from "./Toolbar";
 
 
@@ -84,6 +84,7 @@ export function SwipeNavigator() {
         ref={toolbarRef}
         classes={`${toolbarClass} ${toolbarVisible ? "toolbar-visible" : "toolbar-hidden"}`}
       />
+      <Outlet />
     </div>
   );
 }

@@ -28,16 +28,6 @@ import { PageSettings } from './pages/PageSettings';
 
 const config: AppConfig = appConfig;
 
-function Layout() {
-
-  return (
-    <>
-      <Outlet />
-      <SwipeNavigator />
-
-    </>
-  );
-}
 
 export default function App() {
   return (
@@ -47,20 +37,17 @@ export default function App() {
 
           <Routes>
 
-            <Route element={<Layout />}>
+            <Route element={<ProtectedRoute />}>
 
-              <Route element={<ProtectedRoute />}>
+              <Route element={<SwipeNavigator />}>
 
-                <Route
-                  element={<CartProvider />}
-                >
+                <Route element={<CartProvider />}>
 
                   <Route element={<SelectionProvider />}>
                     <Route path="/" element={<Home {...config} />} />
                   </Route>
 
                   <Route path="/cart" element={<Cart />} />
-
                 </Route>
 
                 <Route path="/favorites" element={<PageFavorites />} />
@@ -68,9 +55,8 @@ export default function App() {
                 <Route path="/remote-carts" element={<RemoteCarts />} />
                 <Route path="/personal" element={<PersonalArea />} />
                 <Route path="*" element={<NotFound />} />
-
+                
               </Route>
-
             </Route>
 
           </Routes>

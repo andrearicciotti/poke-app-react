@@ -56,7 +56,7 @@ export function Ingredient({
         isSelected &&
         <ButtonIcon
           icon={<FontAwesomeIcon icon={faPlus} />}
-          classes={"flex flex-center transparent-bg h-100 aspect-1 border-round right-0 absolute"}
+          classes={"flex flex-center transparent-bg aspect-1 border-round right-0 absolute"}
           clickHandler={() => increaseQuantity(ingredientId)}
         />
       }
