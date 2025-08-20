@@ -1,7 +1,5 @@
 import { useState } from "react";
 import type { AppConfig, Group } from "@/types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 import { IngredientGroup } from "../components/home/IngredientGroup";
 import { SizeSelector } from "../components/home/SizeSelector";
@@ -9,8 +7,6 @@ import { PageFooter } from "../components/common/PageFooter";
 import { ButtonText } from "../components/common/ButtonText";
 import { useSelection } from "../context/configurator/SelectionContext";
 import { PageHeader } from "../components/common/PageHeader";
-import { ButtonIcon } from "../components/common/ButtonIcon";
-import { MainMenu } from "../components/common/MainMenu";
 import { SaveSelectionModal } from "../components/SaveSelectionModal";
 
 

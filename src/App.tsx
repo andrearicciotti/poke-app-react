@@ -45,9 +45,9 @@ export default function App() {
 
                   <Route element={<SelectionProvider />}>
                     <Route path="/" element={<Home {...config} />} />
+                    <Route path="/cart" element={<Cart />} />
                   </Route>
 
-                  <Route path="/cart" element={<Cart />} />
                 </Route>
 
                 <Route path="/favorites" element={<PageFavorites />} />
@@ -55,7 +55,7 @@ export default function App() {
                 <Route path="/remote-carts" element={<RemoteCarts />} />
                 <Route path="/personal" element={<PersonalArea />} />
                 <Route path="*" element={<NotFound />} />
-                
+
               </Route>
             </Route>
 

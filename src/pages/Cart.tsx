@@ -8,11 +8,13 @@ import { Item } from "../components/cart/Item";
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { useSelection } from "../context/configurator/SelectionContext";
 
 
 export function Cart() {
   const { cart, deleteAllItems } = useCart();
   const { user } = useAuth();
+  const { getTotalPrice } = useSelection();
 
   const userUid = user?.uid || '';
 
@@ -76,6 +78,12 @@ export function Cart() {
             clickHandler={() => deleteAllItems()}
             disabled={userUid != cart.createdBy || Object.keys(cart.items || {}).length == 0}
           />
+        }
+
+        center={
+          <div className="flex flex-center h-100 gap-05">
+            Totale: <span>{getTotalPrice().toFixed(2)}</span> €
+          </div>
         }
 
         right={
