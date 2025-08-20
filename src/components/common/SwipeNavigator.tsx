@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { useNavigate, useLocation, Outlet } from "react-router-dom";
 import { Toolbar } from "./Toolbar";
+import { MainMenu } from "./MainMenu";
 
 
 export function SwipeNavigator() {
@@ -80,6 +81,8 @@ export function SwipeNavigator() {
 
   return (
     <div {...handlers} className="swiper">
+      <MainMenu />
+      
       <Toolbar
         ref={toolbarRef}
         classes={`${toolbarClass} ${toolbarVisible ? "toolbar-visible" : "toolbar-hidden"}`}
