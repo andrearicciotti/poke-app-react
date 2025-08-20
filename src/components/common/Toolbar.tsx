@@ -4,17 +4,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocation } from "react-router-dom";
 
 export interface ToolbarProps {
-  ToolbarItems?: React.ReactNode,
+  ref?: React.Ref<HTMLDivElement>
   classes?: string
 }
 
-export function Toolbar({ ToolbarItems, classes }: ToolbarProps) {
+export function Toolbar({ ref,classes }: ToolbarProps) {
   const location = useLocation();
 
   function renderToolbar() {
 
     return (
-      <div className={classes + " toolbar flex flex-center just-center gap-1"}>
+      <div ref={ref} className={classes + " toolbar flex flex-center just-center gap-1"}>
         <ButtonIcon
           icon={<FontAwesomeIcon icon={faHouse} />}
           classes={`primary-color border-r-10${location.pathname === '/' ? ' selected' : ''}`}

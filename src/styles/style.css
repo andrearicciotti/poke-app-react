@@ -50,9 +50,14 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 .swiper {
   position: fixed;
   bottom: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 2;
 }

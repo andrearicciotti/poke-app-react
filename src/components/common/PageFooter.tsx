@@ -10,23 +10,14 @@ export function PageFooter({ left, center, right, classes }: PageFooterProps) {
   const _classes = classes ? `${classes} ` : '';
   return (
     <footer className={`${_classes}page-footer`}>
-      <div 
-        className="padding-1"
+      <div
+        className="padding-1 flex flex-center just-around"
       >
         {left}
-      </div>
-      
-      <div 
-        className="padding-1-0"
-      >
         {center}
-      </div>
-
-      <div 
-        className="padding-1 flex just-end"
-      >
         {right}
       </div>
+
     </footer>
   )
 }

@@ -36,7 +36,7 @@ export function Ingredient({
 
   return (
     <div 
-      className={`${selected}ingredient-container relative`}
+      className={`${selected}ingredient-container`}
       {...(ingredientQuantity > 1 ? {'data-extra': ingredientQuantity} : {})}
     >
       <label

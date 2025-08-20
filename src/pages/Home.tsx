@@ -26,20 +26,11 @@ export function Home({ dimensioni, gruppi }: AppConfig) {
     <div className="page-container">
       <PageHeader
         classes="flex flex-center just-around"
-        left={
-          <ButtonIcon
-            icon={<FontAwesomeIcon icon={faCartShopping} />}
-            classes="gold border-r-10 flex-1"
-            tooltip="Carrello"
-            linkTo={"/cart"}
-          />
-        }
+
         center={
-          <h2 id="page-title">Crea la tua Poke</h2>
+          <h3 id="page-title">Crea la tua Poke</h3>
         }
-        right={
-          <MainMenu />
-        }
+
       />
 
       <SizeSelector sizes={dimensions} />
@@ -59,7 +50,7 @@ export function Home({ dimensioni, gruppi }: AppConfig) {
           />
         }
         center={
-          <div className="flex flex-center h-100 gap-5">
+          <div className="flex flex-center h-100 gap-05">
             Totale: <span>{getTotalPrice().toFixed(2)}</span> €
           </div>
         }

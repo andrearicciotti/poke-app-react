@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import type { Cart, Poke } from "../types";
-import { MainMenu } from "../components/common/MainMenu";
 import { PageHeader } from "../components/common/PageHeader";
 import { PageFooter } from "../components/common/PageFooter";
 import { ButtonText } from "../components/common/ButtonText";
@@ -24,15 +23,17 @@ export function Cart() {
   return (
     <div className="page-container h-100 flex flex-column">
       <PageHeader
+        classes="flex flex-center just-around"
+
         center={
           <h3
             className="h-100 flex flex-center gap-05 text-center"
           // contentEditable={"plaintext-only"}
           >
             {
-              cart.isShared && 
-              <FontAwesomeIcon 
-                icon={faLink} 
+              cart.isShared &&
+              <FontAwesomeIcon
+                icon={faLink}
                 title="Carrello condiviso"
               />
             }
@@ -41,10 +42,7 @@ export function Cart() {
             </span>
           </h3>
         }
-        right={
-          <MainMenu />
-        }
-        classes="main-bg"
+
       />
 
 
